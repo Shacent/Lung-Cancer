@@ -11,20 +11,63 @@ st.set_page_config(
     layout="wide"
 )
 
+# CSS untuk kompatibilitas dark mode
+st.markdown("""
+<style>
+.header-container {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #667eea;
+}
+.header-title {
+    color: #ffffff !important;
+    text-align: center;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.header-subtitle {
+    color: #ffffff !important;
+    text-align: center;
+    margin: 5px 0 0 0;
+    font-size: 1.2rem;
+}
+.researcher-container {
+    background-color: rgba(70, 130, 180, 0.1);
+    border: 2px solid #4682b4;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.researcher-title {
+    color: #4682b4 !important;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.researcher-info {
+    font-size: 16px;
+    margin: 5px 0;
+    color: inherit;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Header dengan identitas peneliti
 st.markdown("""
-<div style='background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
-    <h1 style='color: white; text-align: center; margin: 0;'>🫁 Sistem Prediksi Kanker Paru-paru</h1>
-    <p style='color: white; text-align: center; margin: 5px 0 0 0; font-size: 18px;'>Menggunakan Algoritma Random Forest</p>
+<div class='header-container'>
+    <h1 class='header-title'>🫁 Sistem Prediksi Kanker Paru-paru</h1>
+    <p class='header-subtitle'>Menggunakan Algoritma Random Forest</p>
 </div>
 """, unsafe_allow_html=True)
 
 # Identitas peneliti
 st.markdown("""
-<div style='background-color: #f0f2f6; padding: 15px; border-radius: 10px; margin-bottom: 20px;'>
-    <h3 style='color: #1f77b4; margin-top: 0;'>👩‍🎓 Peneliti</h3>
-    <p style='font-size: 16px; margin: 5px 0;'><strong>Nama:</strong> Olivia Anjelika Sitepu</p>
-    <p style='font-size: 16px; margin: 5px 0;'><strong>Status:</strong> Penelitian Tingkat 3</p>
+<div class='researcher-container'>
+    <h3 class='researcher-title'>👩‍🎓 Peneliti</h3>
+    <p class='researcher-info'><strong>Nama:</strong> Olivia Anjelika Sitepu</p>
+    <p class='researcher-info'><strong>Status:</strong> Penelitian Tingkat 3</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -228,12 +271,11 @@ else:
 
 # Footer
 st.markdown("---")
-st.markdown(
-    "<div style='text-align: center; color: gray; padding: 20px;'>"
-    "<p><strong>Aplikasi Prediksi Kanker Paru-paru</strong></p>"
-    "<p>Peneliti: Olivia Anjelika Sitepu | Penelitian Tingkat 3</p>"
-    "<p>Menggunakan Algoritma Random Forest untuk Deteksi Dini Kanker Paru-paru</p>"
-    "<p><em>Untuk Tujuan Edukasi dan Penelitian</em></p>"
-    "</div>",
-    unsafe_allow_html=True
-)
+st.markdown("""
+<div style='text-align: center; padding: 20px; border: 1px solid #4682b4; border-radius: 10px; background-color: rgba(70, 130, 180, 0.05);'>
+    <p style='margin: 5px 0; font-weight: bold; color: #4682b4;'>Aplikasi Prediksi Kanker Paru-paru</p>
+    <p style='margin: 5px 0;'>Peneliti: Olivia Anjelika Sitepu | Penelitian Tingkat 3</p>
+    <p style='margin: 5px 0;'>Menggunakan Algoritma Random Forest untuk Deteksi Dini Kanker Paru-paru</p>
+    <p style='margin: 5px 0; font-style: italic;'>Untuk Tujuan Edukasi dan Penelitian</p>
+</div>
+""", unsafe_allow_html=True)
