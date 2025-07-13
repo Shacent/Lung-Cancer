@@ -11,22 +11,62 @@ st.set_page_config(
     layout="wide"
 )
 
-# Judul aplikasi
-st.title("🫁 Sistem Prediksi Kanker Paru-paru")
-st.markdown("---")
+# Header dengan identitas peneliti
+st.markdown("""
+<div style='background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; margin-bottom: 20px;'>
+    <h1 style='color: white; text-align: center; margin: 0;'>🫁 Sistem Prediksi Kanker Paru-paru</h1>
+    <p style='color: white; text-align: center; margin: 5px 0 0 0; font-size: 18px;'>Menggunakan Algoritma Random Forest</p>
+</div>
+""", unsafe_allow_html=True)
+
+# Identitas peneliti
+st.markdown("""
+<div style='background-color: #f0f2f6; padding: 15px; border-radius: 10px; margin-bottom: 20px;'>
+    <h3 style='color: #1f77b4; margin-top: 0;'>👩‍🎓 Peneliti</h3>
+    <p style='font-size: 16px; margin: 5px 0;'><strong>Nama:</strong> Olivia Anjelika Sitepu</p>
+    <p style='font-size: 16px; margin: 5px 0;'><strong>Status:</strong> Penelitian Tingkat 3</p>
+</div>
+""", unsafe_allow_html=True)
+
+# Latar belakang penelitian
+with st.expander("📖 Latar Belakang Penelitian", expanded=False):
+    st.markdown("""
+    **Kanker paru-paru** merupakan salah satu penyakit kanker yang paling umum dan mematikan di seluruh dunia. 
+    The American Cancer Society memperkirakan akan ada **234.580 kasus baru** kanker paru-paru pada tahun 2024, 
+    dengan tingkat mortalitas yang tinggi.
+    
+    **Tantangan Utama:**
+    - Keterlambatan dalam diagnosis dapat mengakibatkan kemajuan penyakit yang tidak terkendali
+    - Mengurangi peluang kesembuhan dan memperburuk prognosis pasien
+    - Masalah utama pada identifikasi awal yang tepat dan manajemen risiko yang efektif
+    
+    **Solusi dengan Machine Learning:**
+    Perkembangan teknologi kecerdasan buatan telah membuka peluang baru dalam meningkatkan deteksi dini 
+    dan manajemen risiko kanker paru-paru. **Algoritma Random Forest** terbukti mampu menganalisis berbagai 
+    faktor risiko dan gejala klinis secara mendalam, memungkinkan pembuatan prediksi yang lebih tepat dan 
+    personalisasi tingkat risiko berdasarkan karakteristik individu.
+    
+    Pengembangan sistem prediksi yang akurat dan mudah diakses diharapkan dapat memberikan kontribusi nyata 
+    dalam upaya pencegahan dan penanganan kanker paru-paru di Indonesia dan secara global.
+    """)
 
 # Sidebar untuk informasi
-st.sidebar.header("ℹ️ Informasi")
+st.sidebar.header("ℹ️ Informasi Aplikasi")
 st.sidebar.info(
     "Aplikasi ini menggunakan model Random Forest untuk memprediksi "
     "kemungkinan kanker paru-paru berdasarkan gejala dan faktor risiko."
 )
 
+st.sidebar.markdown("---")
+st.sidebar.markdown("**👩‍🎓 Peneliti:**")
+st.sidebar.markdown("Olivia Anjelika Sitepu")
+st.sidebar.markdown("Penelitian Tingkat 3")
+
 # Load model
 @st.cache_resource
 def load_model():
     try:
-        model = joblib.load('models/random_forest_lung_cancer_model.pkl')
+        model = joblib.load('random_forest_lung_cancer_model.pkl')
         return model
     except FileNotFoundError:
         st.error("Model tidak ditemukan! Pastikan file 'random_forest_lung_cancer_model.pkl' ada di direktori yang sama.")
@@ -189,8 +229,11 @@ else:
 # Footer
 st.markdown("---")
 st.markdown(
-    "<div style='text-align: center; color: gray;'>"
-    "Aplikasi Prediksi Kanker Paru-paru | Untuk Tujuan Edukasi"
+    "<div style='text-align: center; color: gray; padding: 20px;'>"
+    "<p><strong>Aplikasi Prediksi Kanker Paru-paru</strong></p>"
+    "<p>Peneliti: Olivia Anjelika Sitepu | Penelitian Tingkat 3</p>"
+    "<p>Menggunakan Algoritma Random Forest untuk Deteksi Dini Kanker Paru-paru</p>"
+    "<p><em>Untuk Tujuan Edukasi dan Penelitian</em></p>"
     "</div>",
     unsafe_allow_html=True
 )
