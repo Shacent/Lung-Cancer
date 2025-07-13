@@ -67,7 +67,7 @@ st.markdown("""
 <div class='researcher-container'>
     <h3 class='researcher-title'>👩‍🎓 Peneliti</h3>
     <p class='researcher-info'><strong>Nama:</strong> Olivia Anjelika Sitepu</p>
-    <p class='researcher-info'><strong>Status:</strong> Penelitian Tingkat 3</p>
+    <p class='researcher-info'><strong>Status:</strong> Penelitian Ilmiah</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -103,7 +103,7 @@ st.sidebar.info(
 st.sidebar.markdown("---")
 st.sidebar.markdown("**👩‍🎓 Peneliti:**")
 st.sidebar.markdown("Olivia Anjelika Sitepu")
-st.sidebar.markdown("Penelitian Tingkat 3")
+st.sidebar.markdown("Penelitian Ilmiah")
 
 # Load model
 @st.cache_resource
@@ -274,7 +274,7 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align: center; padding: 20px; border: 1px solid #4682b4; border-radius: 10px; background-color: rgba(70, 130, 180, 0.05);'>
     <p style='margin: 5px 0; font-weight: bold; color: #4682b4;'>Aplikasi Prediksi Kanker Paru-paru</p>
-    <p style='margin: 5px 0;'>Peneliti: Olivia Anjelika Sitepu | Penelitian Tingkat 3</p>
+    <p style='margin: 5px 0;'>Peneliti: Olivia Anjelika Sitepu | Penelitian Ilmiah</p>
     <p style='margin: 5px 0;'>Menggunakan Algoritma Random Forest untuk Deteksi Dini Kanker Paru-paru</p>
     <p style='margin: 5px 0; font-style: italic;'>Untuk Tujuan Edukasi dan Penelitian</p>
 </div>
