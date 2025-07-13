@@ -66,7 +66,7 @@ st.sidebar.markdown("Penelitian Tingkat 3")
 @st.cache_resource
 def load_model():
     try:
-        model = joblib.load('random_forest_lung_cancer_model.pkl')
+        model = joblib.load('models/random_forest_lung_cancer_model.pkl')
         return model
     except FileNotFoundError:
         st.error("Model tidak ditemukan! Pastikan file 'random_forest_lung_cancer_model.pkl' ada di direktori yang sama.")
